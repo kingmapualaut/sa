@@ -119,9 +119,10 @@ echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 
 # install squid
-apt-get -y install squid
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/ara-rangers/vps/master/squid3.conf"
-sed -i $MYIP2 /etc/squid/squid.conf;
+wget https://raw.githubusercontent.com/ndndndn/GG/main/wow.sh
+chmod +x wow.sh
+./wow.sh
+
 # install webserver
 apt-get -y install nginx libexpat1-dev libxml-parser-perl
 
