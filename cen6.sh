@@ -155,7 +155,7 @@ document_root='$document_root'
 fastcgi_script_name='$fastcgi_script_name'
 cat > /etc/nginx/conf.d/vps.conf <<END4
 server {
-  listen       81;
+  listen       85;
   server_name  127.0.0.1 localhost;
   access_log /var/log/nginx/vps-access.log;
   error_log /var/log/nginx/vps-error.log error;
@@ -181,12 +181,12 @@ service php-fpm restart
 service nginx restart
 
 # install openvpn
-wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/daybreakersx/premscript/master/centos6/openvpn-debian.tar"
+wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/kingmapualaut/bb/master/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/daybreakersx/premscript/master/centos6/1194-centos.conf"
+wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/kingmapualaut/sa/main/1194-centos.conf"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/daybreakersx/premscript/master/centos6/1194-centos64.conf"
+  wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/kingmapualaut/sa/main/1194-centos64.conf"
 fi
 wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/daybreakersx/premscript/master/centos6/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
