@@ -38,10 +38,10 @@ Dropbear_Port2='843'
 # Stunnel Ports
 Stunnel_Port1='445' # through Dropbear
 Stunnel_Port2='444' # through OpenSSH
-Stunnel_Port3='443' # through OpenVPN
+Stunnel_Port3='441' # through OpenVPN
 
 # OpenVPN Ports
-OpenVPN_Port1='110'
+OpenVPN_Port1='443'
 OpenVPN_Port2='1194' # take note when you change this port, openvpn sun noload config will not work
 
 # Privoxy Ports (must be 1024 or higher)
@@ -64,7 +64,7 @@ cd
 rm -rf ddos-deflate-master.zip
 
 # OpenVPN Config Download Port
-OvpnDownload_Port='86' # Before changing this value, please read this document. It contains all unsafe ports for Google Chrome Browser, please read from line #23 to line #89: https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
+OvpnDownload_Port='88' # Before changing this value, please read this document. It contains all unsafe ports for Google Chrome Browser, please read from line #23 to line #89: https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
 
 # Server local time
 MyVPS_Time='Asia/Kuala_Lumpur'
@@ -251,7 +251,7 @@ connect = 127.0.0.1:openssh_port_c
 
 [openvpn]
 accept = 443
-connect = 127.0.0.1:110
+connect = 127.0.0.1:1194
 MyStunnelC
 
  # setting stunnel ports
